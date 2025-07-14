@@ -109,3 +109,4 @@ DoHeatmap(HCO_dat, features = top10_cl_markers_presto$gene) + NoLegend()
 plot1 <- FeaturePlot(HCO_dat, c("NEUROD2","NEUROD6"), ncol = 1)
 plot2 <- VlnPlot(HCO_dat, features = c("NEUROD2","NEUROD6"), pt.size = 0)
 plot1 + plot2 + plot_layout(widths = c(1, 2))
+
