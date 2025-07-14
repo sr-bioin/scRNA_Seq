@@ -1,11 +1,7 @@
 <h2> Nextflow pipeline for Single Cell sequence analysis </h2>
 
-<h3>1). Quality control fo the raw sequencing data generated from the sequencing instrument to remove low-quality reads and adapter sequences.</h3>
+<h3>1). Cell Ranger pipeline: Sequencing data preprocessing steps, including base calling, mapping and read counting, have been done.</h3> (https://support.10xgenomics.com/single-cell-gene-expression/software/pipelines/latest/what-is-cell-ranger)
 
-a). FastQC is used to assess the quality distribution and other quality metrics of sequencing reads. It helps detect potential issues during the sequencing process, such as decreasing sequencing quality and adapter contamination. For more information, please visit the FastQC website.
+<h3>2). Seurat.</h3>
 
-b). MultiQC is a tool to create a single report with interactive plots for multiple bioinformatics analyses across many samples. MultiQC reports can describe multiple analysis steps and large numbers of samples within a single plot, and multiple analysis tools making it ideal for routine fast quality control.For more information, please visit the MultiQC website.
-
-c). Trimmomatic: Used to remove adapter sequences, low-quality bases, and low-quality reads from sequencing reads. You can find more information and usage instructions on the Trimmomatic GitHub.
-
-
+<h3>2). </h3>
