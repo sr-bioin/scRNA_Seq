@@ -125,5 +125,5 @@ plot_clmarker_presto <- DoHeatmap(HCO_dat, features = top10_cl_markers_presto$ge
 #Exploring Specific genes
 plot1_spgene <- FeaturePlot(HCO_dat, c("NEUROD2","NEUROD6"), ncol = 1)
 plot2_spgene <- VlnPlot(HCO_dat, features = c("NEUROD2","NEUROD6"), pt.size = 0)
-plot1_spgene + plot2_spgene# + plot_layout(widths = c(1, 2))
+plot1_spgene + plot2_spgene # + plot_layout(widths = c(1, 2))
 
