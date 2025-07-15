@@ -1,3 +1,11 @@
+# Seurat sCRNA analysis
+install.packages("Seurat")
+install.packages("Matrix")
+install.packages("presto")
+install.packages("destiny")
+install.packages("patchwork")
+install.packages("dplyr")
+
 library(Seurat)
 library(Matrix)
 library(patchwork)
@@ -6,7 +14,7 @@ library(presto)
 library(destiny)
 library(ggplot2)
 
-# Public scRNA-seq data of human cerebral organoids were used [paper](https://www.nature.com/articles/s41586-019-1654-9).
+# Public scRNA-seq data of human cerebral organoids were used [paper](https://www.nature.com/articles/s41586-019-1654-9)
 # Load sample
 # Load count matrix
 counts <- readMM("data/DS1/matrix.mtx.gz")
@@ -22,9 +30,100 @@ HCO_dat <- CreateSeuratObject(counts, project = "DS1", min.cells = 3, min.featur
 
 # Quality control
 HCO_dat[["percent.mt"]] <- PercentageFeatureSet(HCO_dat, pattern = "^MT[-\\.]")
-ggsave(file="percentagefeature.png", width=800, height=600) # Save figures in working directory
-Plot(HCO_dat, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3)
+# Save figures in working directory
+VlnPlot_QC(HCO_dat, features = c("nFeature_RNA", "nCount_RNA", 
+                             "percent.mt"), ncol = 3, pt.size = 0.1)
+ggsave(file="Quality_control.pdf", width=15, height=10)
 dev.off()  # Save figures in working directory
-VlnPlot(HCO_dat, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3, pt.size=0)
 
+# Scatter plots -- library(patchwork)
+plot1_Scp <- FeatureScatter(HCO_dat, feature1 = "nCount_RNA", feature2 = "percent.mt") +
+  theme(legend.position="none")
+plot2_Scp <- FeatureScatter(HCO_dat, feature1 = "nCount_RNA", feature2 = "nFeature_RNA") +
+  theme(legend.position="none")
+plot1_Scp + plot2_Scp
+
+# Filter low-quality cells
+HCO_dat <- subset(HCO_dat, subset = nFeature_RNA > 200 & nFeature_RNA < 5000 & percent.mt < 10)
+plot_filter <- VlnPlot(HCO_dat, features = c("nFeature_RNA", "nCount_RNA", "percent.mt"), ncol = 3, pt.size = 0.1)
+plot_filter
+
+# Normalization
+HCO_dat <- NormalizeData(HCO_dat, normalization.method = "LogNormalize", scale.factor = 10000)
+HCO_dat <- NormalizeData(HCO_dat)
+
+# Plot top variable genes
+HCO_dat <- FindVariableFeatures(HCO_dat, selection.method = "vst", nfeatures = 2000)
+top10 <- head(VariableFeatures(HCO_dat), 10)
+plot1_T10 <- VariableFeaturePlot(HCO_dat)
+plot2_T10 <- LabelPoints(plot = plot1, points = top10, repel = TRUE, 
+                     xnudge = 0, ynudge = 0)
+plot1_T10 + plot2_T10
+
+# Scaling and regression
+HCO_dat <- ScaleData(HCO_dat)
+HCO_dat <- ScaleData(HCO_dat, vars.to.regress = c("nFeature_RNA", "percent.mt"))
+
+# Linear dimension reduction and principal component analysis (PCA)
+HCO_dat <- RunPCA(HCO_dat, npcs = 50)
+plot_LinD <- ElbowPlot(HCO_dat, ndims = ncol(Embeddings(HCO_dat, "pca")))
+plot_LinD
+
+# Heatmap for PCs
+plot_PCA <- Heatmap(HCO_dat, dims = 1:21, cells = 200, balanced = TRUE)
+plot_PCA
+
+#Clustering
+HCO_dat <- FindNeighbors(HCO_dat, dims = 1:10)
+HCO_dat <- FindClusters(HCO_dat, resolution = 0.5)
+
+# Non-linear dimensional
+# Run UMAP and tSNE
+HCO_dat <- RunTSNE(HCO_dat, dims = 1:20)
+HCO_dat <- RunUMAP(HCO_dat, dims = 1:20)
+
+plot1_tsne <- TSNEPlot(HCO_dat, reduction = "tsne", label = TRUE) + ggtitle("t-SNE")
+plot2_umap <- UMAPPlot(HCO_dat, reduction = "umap", label = TRUE) + ggtitle("umap")
+plot1_tsne + plot2_umap
+
+# Cell Type Marker Visualization
+plot1_ctMarker <- FeaturePlot(HCO_dat, c("MKI67","NES","DCX","FOXG1","DLX2","EMX1","OTX2","LHX9","TFAP2A"), 
+                     reduction = "tsne", ncol = 3)
+plot2_ctMarker <- FeaturePlot(HCO_dat, c("MKI67","NES","DCX","FOXG1","DLX2","EMX1","OTX2","LHX9","TFAP2A"), 
+                     reduction = "umap", ncol = 3)
+plot1_ctMarker
+plot2_ctMarker
+
+
+# Annotation cell clusters
+# Known marker genes
+ct_markers <- c("MKI67","NES","DCX","FOXG1","DLX2","DLX5","ISL1","SIX3","EMX1","PAX6","GLI3","EOMES",#"NEUROD6","RSPO3","OTX2","LHX9","TFAP2A") 
+plot1_knMarker <- DoHeatmap(HCO_dat, features = ct_markers) #+ NoLegend()
+plot1_knMarker
+
+# Cluster mark identification
+# With Seurat
+cl.markers <- FindAllMarkers(HCO_dat, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
+cl.markers %>%
+  group_by(cluster) %>%
+  top_n(n = 10, wt = avg_log2FC) -> top10
+plot_clmarker <- DoHeatmap(HCO_dat, features = top10$gene) + NoLegend()
+plot_clmarker
+                
+# With presto (faster than seurat)
+cl_markers_presto <- wilcoxauc(HCO_dat)
+cl_markers_presto %>%
+  filter(logFC > log(1.2) & pct_in > 0.2 & padj < 0.05) %>%
+  group_by(group) %>%
+  arrange(desc(logFC), .by_group = TRUE) %>%
+  top_n(n = 2, wt = logFC)
+
+# Top 10 markers heatmap
+top10_cl_markers_presto <- cl_markers %>% group_by(cluster) %>% top_n(n = 10, wt = avg_log2FC)
+plot_clmarker_presto <- DoHeatmap(HCO_dat, features = top10_cl_markers_presto$gene) + NoLegend()
+
+#Exploring Specific genes
+plot1_spgene <- FeaturePlot(HCO_dat, c("NEUROD2","NEUROD6"), ncol = 1)
+plot2_spgene <- VlnPlot(HCO_dat, features = c("NEUROD2","NEUROD6"), pt.size = 0)
+plot1_spgene + plot2_spgene# + plot_layout(widths = c(1, 2))
 
