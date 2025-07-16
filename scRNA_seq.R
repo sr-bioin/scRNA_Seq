@@ -13,6 +13,7 @@ library(dplyr)
 library(presto)
 library(destiny)
 library(ggplot2)
+library(voxhunt)
 
 # Public scRNA-seq data of human cerebral organoids were used [paper](https://www.nature.com/articles/s41586-019-1654-9)
 # Load sample
@@ -127,3 +128,98 @@ plot1_spgene <- FeaturePlot(HCO_dat, c("NEUROD2","NEUROD6"), ncol = 1)
 plot2_spgene <- VlnPlot(HCO_dat, features = c("NEUROD2","NEUROD6"), pt.size = 0)
 plot1_spgene + plot2_spgene # + plot_layout(widths = c(1, 2))
 
+# Data set integration
+# Voxhunt
+
+load_aba_data("data/voxhunt_data/", lazy = TRUE) # Voxhunt library(https://data.mendeley.com/datasets/g4xg38mwcn/1)
+
+# 300 most variable genes from the E13.5 mouse brain
+genes_use <- variable_genes('E13', 300)$gene
+
+# Calculate the similarity map of a seurat object to the E13.5 mouse brain
+vox_map <- voxel_map(HCO_dat, genes_use=genes_use)
+plot_vox_map(vox_map)
+
+new_ident <- setNames(c("Dorsal telen. NPC",
+                        "Midbrain-hindbrain boundary neuron",
+                        "Dorsal telen. neuron",
+                        "Dien. and midbrain excitatory neuron",
+                        "MGE-like neuron","G2M dorsal telen. NPC",
+                        "Dorsal telen. IP","Dien. and midbrain NPC",
+                        "Dien. and midbrain IP and excitatory early neuron",
+                        "G2M Dien. and midbrain NPC",
+                        "G2M dorsal telen. NPC",
+                        "Dien. and midbrain inhibitory neuron",
+                        "Dien. and midbrain IP and early inhibitory neuron",
+                        "Ventral telen. neuron",
+                        "Unknown 1",
+                        "Unknown 2",
+                        "Unknown 3"),
+                      levels(HCO_dat))
+
+HCO_dat <- RenameIdents(HCO_dat, new_ident)
+plot_newIdent <- DimPlot(HCO_dat, reduction = "umap", label = TRUE) + NoLegend()
+plot_newIdent
+
+# Pseudotemporal cell ordering and variable genes
+HCO_dat_dorsal <- subset(HCO_dat, subset = RNA_snn_res.1 %in% c(0, 2, 5, 6, 10))
+HCO_dat_dorsal <- FindVariableFeatures(HCO_dat_dorsal, nfeatures = 2000)
+
+# Remove cell cycle genes; cc.genes list is automatically imported by Seurat
+VariableFeatures(HCO_dat) <- setdiff(VariableFeatures(HCO_dat), unlist(cc.genes))
+
+# PCA and UMAP before cell cycle correction
+HCO_dat_dorsal <- RunPCA(HCO_dat_dorsal) %>% RunUMAP(dims = 1:20)
+plot_PCAUMAP_bcc <- FeaturePlot(HCO_dat_dorsal, c("MKI67","GLI3","EOMES","NEUROD6"), ncol = 4)
+plot_PCAUMAP_bcc
+
+# Generate cell-cycle-related scores for every cell
+HCO_dat_dorsal <- CellCycleScoring(HCO_dat_dorsal,
+                                   g2m.features = cc.genes$g2m.genes,
+                                  s.features = cc.genes$s.genes, 
+                                  set.ident = TRUE)
+# Regress out cell cycle
+HCO_dat_dorsal <- ScaleData(HCO_dat_dorsal, vars.to.regress = c("S.Score", 
+                                                                "G2M.Score"))
+# Run PCA and UMAP after cell cycle correction
+HCO_dat_dorsal <- RunPCA(HCO_dat_dorsal) %>% RunUMAP(dims = 1:20)
+plot_PCAUMAP_acc <- FeaturePlot(HCO_dat_dorsal, c("MKI67","GLI3","EOMES","NEUROD6"), ncol = 4)
+plot_PCAUMAP_acc
+
+# Run diffusion map to order the cell
+# Create diffusion map
+diff_map <- DiffusionMap(Embeddings(HCO_dat_dorsal, "pca")[,1:20])
+
+# Compute diffusion pseudotime (DPT)
+dpt <- DPT(dm)
+
+# Rank pseudotime values
+HCO_dat_dorsal$dpt <- rank(dpt$dpt)
+
+# Plot pseudotime and gene expression
+plot_diff_map <- FeaturePlot(HCO_dat_dorsal, c("dpt","GLI3","EOMES","NEUROD6"), ncol=4)
+plot_diff_map
+
+
+# Gene Expression vs Pseudotime
+if (is(HCO_dat_dorsal[['RNA']], 'Assay5')){
+  expr <- LayerData(HCO_dat_dorsal, assay = "RNA", layer = "data")
+} else{
+  expr <- HCO_dat_dorsal[['RNA']]@data
+}
+
+# Plot expression trends across pseudotime
+
+plot_GLI_Exp <- qplot(HCO_dat_dorsal$dpt, as.numeric(expr["GLI3",]),
+               xlab="Dpt", ylab="Expression", main="GLI3") +
+  geom_smooth(se = FALSE, method = "loess") + theme_bw()
+
+plot_EOM_Exp <- qplot(HCO_dat_dorsal$dpt, as.numeric(expr["EOMES",]),
+               xlab="Dpt", ylab="Expression", main="EOMES") +
+  geom_smooth(se = FALSE, method = "loess") + theme_bw()
+
+plot_NEUR_Exp <- qplot(HCO_dat_dorsal$dpt, as.numeric(expr["NEUROD6",]),
+               xlab="Dpt", ylab="Expression", main="NEUROD6") +
+  geom_smooth(se = FALSE, method = "loess") + theme_bw()
+
+plot_GLI_Exp + plot_EOM_Exp + plot_NEUR_Exp
