@@ -80,7 +80,7 @@ process seurat_r_analysis {
 
     script:
     """
-    Rscript run_seurat.R ${solo_output_dir}
+    Rscript seurat_scRNA_seq.R ${solo_output_dir}
     """
 }
 
