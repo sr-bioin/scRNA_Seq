@@ -1,3 +1,9 @@
+#!/usr/bin/env Rscript
+
+args <- commandArgs(trailingOnly = TRUE)
+matrix_dir <- args[1]
+sample_id <- args[2]
+
 # Seurat sCRNA analysis
 install.packages("Seurat")
 install.packages("Matrix")
