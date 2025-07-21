@@ -182,17 +182,19 @@ if (is(HCO_dat_dorsal[['RNA']], 'Assay5')){
 }
 
 # Plot expression trends across pseudotime
-
 plot_GLI_Exp <- qplot(HCO_dat_dorsal$dpt, as.numeric(expr["GLI3",]),
                xlab="Dpt", ylab="Expression", main="GLI3") +
   geom_smooth(se = FALSE, method = "loess") + theme_bw()
-
 plot_EOM_Exp <- qplot(HCO_dat_dorsal$dpt, as.numeric(expr["EOMES",]),
                xlab="Dpt", ylab="Expression", main="EOMES") +
   geom_smooth(se = FALSE, method = "loess") + theme_bw()
-
 plot_NEUR_Exp <- qplot(HCO_dat_dorsal$dpt, as.numeric(expr["NEUROD6",]),
                xlab="Dpt", ylab="Expression", main="NEUROD6") +
   geom_smooth(se = FALSE, method = "loess") + theme_bw()
-
 plot_GLI_Exp + plot_EOM_Exp + plot_NEUR_Exp
+
+# Save the results
+saveRDS(HCO_dat, file="DS1/HCO_dat_obj_all.rds")
+saveRDS(HCO_dat_dorsal, file="DS1/HCO_dat_obj_dorsal.rds")
+HCO_dat <- readRDS("DS1/HCO_dat_obj_all.rds")
+HCO_dat_dorsal <- readRDS("DS1/HCO_dat_obj_dorsal.rds")
