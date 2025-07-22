@@ -134,6 +134,27 @@ plot1_spgene <- FeaturePlot(HCO_dat, c("NEUROD2","NEUROD6"), ncol = 1)
 plot2_spgene <- VlnPlot(HCO_dat, features = c("NEUROD2","NEUROD6"), pt.size = 0)
 plot1_spgene + plot2_spgene # + plot_layout(widths = c(1, 2))
 
+# Renaming cell cluster labels by the annotation
+new_names <- setNames(c("Dorsal telen. NPC",
+                        "Midbrain-hindbrain boundary neuron",
+                        "Dorsal telen. neuron",
+                        "Dien. and midbrain excitatory neuron",
+                        "MGE-like neuron","G2M dorsal telen. NPC",
+                        "Dorsal telen. IP","Dien. and midbrain NPC",
+                        "Dien. and midbrain IP and excitatory early neuron",
+                        "G2M Dien. and midbrain NPC",
+                        "G2M dorsal telen. NPC",
+                        "Dien. and midbrain inhibitory neuron",
+                        "Dien. and midbrain IP and early inhibitory neuron",
+                        "Ventral telen. neuron",
+                        "Unknown 1",
+                        "Unknown 2",
+                        "Unknown 3"))
+names(new_names) <- levels(HCO_dat)
+HCO_dat <- RenameIdents(HCO_dat, new_names)
+plot_newIdent <- DimPlot(HCO_dat, reduction = "umap", label = TRUE) + NoLegend()
+plot_newIdent
+                
 # Pseudotemporal cell ordering and variable genes
 HCO_dat_dorsal <- subset(HCO_dat, subset = RNA_snn_res.1 %in% c(0, 2, 5, 6, 10))
 HCO_dat_dorsal <- FindVariableFeatures(HCO_dat_dorsal, nfeatures = 2000)
