@@ -1,5 +1,5 @@
 #===========================================================================================================
-#Multiple dataset scRNA-seq analysis
+# Multiple dataset scRNA-seq analysis
 
 library(Seurat)
 library(dplyr)
@@ -100,7 +100,6 @@ library(patchwork)
 pbmc.big <- merge(HCO_data_DS1, y = c(HCO_data_DS2, HCO_data_DS3), add.cell.ids = c("3K", "4K", "8K"), project = "PBMC15K")
 pbmc.big
 
-
 #==============================================================================
 # Analysis of a new data using annotated reference data set
 
@@ -139,7 +138,7 @@ heatmap.2(corr2ref_cl, scale="none", trace="none", key=F, keysize=1, margins=c(1
            "#f4a582","#fddbc7","#f7f7f7","#d1e5f0","#92c5de","#4393c3","#2166ac")))(30))
 
 #==============================================================================
-# 1. Transcriptome similarity on cell level
+# Transcriptome similarity on cell level
 ranked_expr_ref <- apply(avg_expr_ref[genes2cor,],2,rank)
 
 library(presto)
@@ -168,19 +167,16 @@ rank_matrix <- function (mat)
 ranked_expr_ds1 <- rank_matrix(HCO_data_DS1@assays$RNA@data[genes2cor,])
 ranked_expr_ds1 <- rank_matrix(LayerData(HCO_data_DS1, layer = "data")[genes2cor, ])
 
-
 # Calculate Pearson correlation between two sparse matrix or one sparse matrix and one dense matrix,
 corr2ref_cell <- corSparse(ranked_expr_ds1, ranked_expr_ref)
 ct_maxcor <- colnames(avg_expr_ref)[apply(corr2ref_cell, 1, which.max)]
 HCO_data_DS1$celltype_maxcor <- ct_maxcor
-
 
 plot1 <- UMAPPlot(HCO_data_DS1, label=T)
 plot2 <- UMAPPlot(HCO_data_DS1, group.by="celltype_maxcor", label=T) + 
   coord_cartesian(clip = "off")
 plot1
 plot2
-
 
 # Summarize the cell-level similarities to the query cell clusters
 corr2ref_scaled <- scale(t(corr2ref_cell))
@@ -190,7 +186,6 @@ heatmap.2(corr2ref_cl, scale="none", trace="none", key=F, keysize=0.5, margins=c
           labRow = colnames(avg_expr_ds1), labCol = colnames(avg_expr_ref), cexRow=0.8, 
           cexCol=0.8,col=colorRampPalette(rev(c("#b2182b","#d6604d","#f4a582",
           "#fddbc7","#f7f7f7","#d1e5f0","#92c5de","#4393c3","#2166ac")))(30))
-
 
 # 2. Seurat-based label transfer
 # Update reference to v5 format
@@ -235,49 +230,7 @@ ggsave(file="Seurat-based_label_transfer.jpg", width=16, height=6)
 dev.off()  # Save figures in working directory
 
 # ================================================================================
-# NOt working need to check
-pred_matrix <- as.matrix(GetAssayData(predictions, slot = "data"))
-pred_matrix <- as.matrix(GetAssayData(predictions, slot = "data"))
 
-# Check and align identities
-ident_vec <- HCO_data_DS1@active.ident
-if (!is.factor(ident_vec)) ident_vec <- as.factor(ident_vec)
-
-pred_scores_sum2cl <- do.call(rbind, lapply(levels(ident_vec), function(cl) {
-  cells <- which(ident_vec == cl)
-  colMeans(pred_matrix[cells, , drop = FALSE])
-}))
-
-# Add row and column names for clarity
-rownames(pred_scores_sum2cl) <- levels(ident_vec)
-colnames(pred_scores_sum2cl) <- colnames(pred_matrix)
-
-library(gplots)
-
-heatmap.2(pred_scores_sum2cl,
-          scale = "none",
-          trace = "none",
-          key = FALSE,
-          keysize = 0.5,
-          margins = c(15, 17),
-          labRow = colnames(avg_expr_ds1),    # should match 11 rows
-          labCol = unique(seurat_ref$celltype), # should match 14 columns
-          cexRow = 0.8,
-          cexCol = 0.8,
-          col = colorRampPalette(rev(c(
-            "#b2182b","#d6604d","#f4a582","#fddbc7","#f7f7f7",
-            "#d1e5f0","#92c5de","#4393c3","#2166ac")))(30))
-
-
-
-# Original one
-pred_scores_sum2cl <- t(sapply(levels(HCO_data_DS1@active.ident), function(cl)
-  colMeans(predictions[which(HCO_data_DS1@active.ident == cl),-c(1,ncol(predictions))]) ))
-
-heatmap.2(pred_scores_sum2cl, scale="none", trace="none", key=F, keysize=0.5, margins=c(15,17),
-          labRow = colnames(avg_expr_ds1), labCol = unique(seurat_ref$celltype), 
-          cexRow=0.8, cexCol=0.8, col=colorRampPalette(rev(c("#b2182b","#d6604d","#f4a582",
-          "#fddbc7","#f7f7f7","#d1e5f0","#92c5de","#4393c3","#2166ac")))(30))
 
 #===================================================================================
 # Cluster connectivity analysis with PAGA pipeline
@@ -330,7 +283,7 @@ adata <- AnnData(
 adata$write_h5ad("data/DS1/HCO_dat_DS1_anndata_obj.h5ad")
 
 # Activate Python environment and load Scanpy
-Sys.setenv(RETICULATE_CONDA = "C:/Users/thapa/miniconda3/Scripts/conda.exe")
+Sys.setenv(RETICULATE_CONDA = "C:/Users/miniconda3/Scripts/conda.exe")
 use_condaenv("scanpy-env", required = TRUE)
 scanpy <- import("scanpy")
 py_config()
@@ -354,47 +307,71 @@ scanpy$pl$paga(adata_DS1,
 
 #==================================================================================================
 # Pseudotime reconstruction 
-
+# Load libraries
 library(Seurat)
 library(destiny)
+library(ggplot2)
 
-# Load individual Seurat objects
+# Load Seurat objects
 HCO_data_DS1 <- readRDS("data/DS1/HCO_dat_obj_all.rds")
 HCO_data_DS2 <- readRDS("data/DS2/HCO_dat_obj_all.rds")
 HCO_data_DS3 <- readRDS("data/DS3/HCO_dat_obj_all.rds")
 
-dm <- DiffusionMap(Embeddings(HCO_data_DS1, "pca")[,1:20])
+# Compute diffusion map using first 20 principal components
 suppressWarnings({
   dm <- DiffusionMap(Embeddings(HCO_data_DS1, "pca")[, 1:20])
 })
+
+# Calculate diffusion pseudotime (DPT)
 dpt <- DPT(dm)
 HCO_data_DS1$dpt <- rank(dpt$dpt)
+HCO_data_DS1$dpt <- HCO_data_DS1$dpt / max(HCO_data_DS1$dpt)  # Normalize to [0, 1]
 
-FeaturePlot(HCO_data_DS1, c("dpt","SOX2","NHLH1","DCX"), ncol=4)
+# Flip direction if correlation with early marker is negative
+if (cor(HCO_data_DS1$dpt, FetchData(HCO_data_DS1, "SOX2")[,1], method = "spearman") < 0) {
+  HCO_data_DS1$dpt <- 1 - HCO_data_DS1$dpt
+}
 
-#------
-HCO_data_DS1$dpt <- max(HCO_data_DS1$dpt) - HCO_data_DS1$dpt
-FeaturePlot(HCO_data_DS1, c("dpt","SOX2","NHLH1","DCX"), ncol=4)
+# Plot DPT and early markers
+FeaturePlot(
+  HCO_data_DS1, 
+  features = c("dpt", "SOX2", "NHLH1", "DCX"), 
+  ncol = 4, pt.size = 0.5, order = TRUE
+) 
 
+# DPT using manually selected tips (random samples from progenitors)
 set.seed(12345)
-idx <- sample(which(HCO_data_DS1@active.ident %in% c('Dorsal telen. NPC',
-                                               'G2M dorsal telen. NPC',
-                                               'Dien. and midbrain NPC',
-                                               'G2M Dien. and midbrain NPC')),3)
-dpt2 <- DPT(dm, tips=idx)
-HCO_data_DS1$dpt2 <- rank(dpt2$dpt)
-FeaturePlot(HCO_data_DS1, c("dpt","dpt2"), ncol=2)
+idx <- sample(
+  which(HCO_data_DS1@active.ident %in% c(
+    'Dorsal telen. NPC',
+    'G2M dorsal telen. NPC',
+    'Dien. and midbrain NPC',
+    'G2M Dien. and midbrain NPC'
+  )),
+  3
+)
+dpt2 <- DPT(dm, tips = idx)
+HCO_data_DS1$dpt2 <- rank(dpt2$dpt) / max(rank(dpt2$dpt))
 
-tips_cand <- sapply(1:100, function(i){ random_root(dm) })
-idx_NPC <- which(HCO_data_DS1@active.ident %in% c('Dorsal telen. NPC',
-                                            'G2M dorsal telen. NPC',
-                                            'Dien. and midbrain NPC',
-                                            'G2M Dien. and midbrain NPC'))
-tips_cand <- as.numeric(names(which.max(table(tips_cand[tips_cand %in% idx_NPC]))))
-dpt3 <- DPT(dm, tips=tips_cand)
-HCO_data_DS1$dpt3 <- rank(dpt3$dpt)
+# DPT using most frequent tip from 100 random starts within progenitors
+tips_cand <- sapply(1:100, function(i) random_root(dm))
+idx_NPC <- which(HCO_data_DS1@active.ident %in% c(
+  'Dorsal telen. NPC',
+  'G2M dorsal telen. NPC',
+  'Dien. and midbrain NPC',
+  'G2M Dien. and midbrain NPC'
+))
+tips_mode <- as.numeric(names(which.max(table(tips_cand[tips_cand %in% idx_NPC]))))
 
-FeaturePlot(HCO_data_DS1, c("dpt","dpt2", "dpt3"), ncol=3)
+dpt3 <- DPT(dm, tips = tips_mode)
+HCO_data_DS1$dpt3 <- rank(dpt3$dpt) / max(rank(dpt3$dpt))
+
+# Plot all 3 pseudotime variants
+FeaturePlot(
+  HCO_data_DS1, 
+  features = c("dpt", "dpt2", "dpt3"), 
+  ncol = 3, pt.size = 0.5, order = TRUE
+) 
 
 #======================================================================================
 # RNA velocity analysis
@@ -456,13 +433,13 @@ adata <- AnnData(X = t(mats$exon[shared_genes,]),
 )
 adata$write_h5ad("data/DS1/anndata_obj_scvelo.h5ad")
 
-
+#======================================================================================
 library(reticulate)
 py_install("scvelo", pip=T)
 scvelo <- import("scvelo")
 scanpy <- import("scanpy")
 
-# Run the RNA velocity.
+# Run RNA velocity.
 
 adata_DS1 <- scanpy$read_loom("data/DS1/loom_obj_scvelo.loom") # option1: load the loom file
 adata_DS1 <- scanpy$read_h5ad("data/DS1/anndata_obj_scvelo.h5ad")
@@ -529,8 +506,7 @@ plt$savefig(
   bbox_inches = "tight",
   pad_inches = 0.4
 )
-#-------------------------------------------------------------------------------
-
+               
 # velocity pseudotime
 
 # Load individual Seurat objects
