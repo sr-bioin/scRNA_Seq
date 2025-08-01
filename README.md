@@ -6,7 +6,7 @@
 
 
 <h3>Resources</h3>
-Seurat https://github.com/satijalab/seurat</h4>
+Seurat https://github.com/satijalab/seurat</br>
 SeuratData https://github.com/satijalab/seurat-data</h4>
 scVelo Estimating RNA Velocity using Seurat and scVelo https://scvelo.readthedocs.io</h4>
 Velocity Estimating RNA Velocity using Seurat https://velocyto.org</h4>
