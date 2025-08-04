@@ -5,9 +5,10 @@
 <h3>2). Seurat: R toolkit for single cell genomics. </h3> More information can be found here (https://satijalab.org/seurat)
 
 <h3>Seurat pipeline</h3>
-Single dataset scRNA-seq analysis
+<h4>Single dataset scRNA-seq analysis</h4>
 
-Multiple dataset scRNA-seq analysis</br>
+
+<h4>Multiple dataset scRNA-seq analysis</h4></br>
    &ensp; Merge two data sets</br>
       &emsp; 1). Seurat integration</br>
       &emsp; 2). Harmony integration</br>
