@@ -9,7 +9,7 @@
 
 
 <h4>Multiple dataset scRNA-seq analysis</h4>
-   >&ensp; 1). Merge two data sets</br>
+   &ensp; 1). Merge two data sets</br>
       &emsp; 1). Seurat integration</br>
       &emsp; 2). Harmony integration</br>
    &ensp; 2).Data annotation with reference data</br>
