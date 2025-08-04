@@ -50,5 +50,6 @@ Seurat https://github.com/satijalab/seurat</br>
 SeuratData https://github.com/satijalab/seurat-data</br>
 scVelo Estimating RNA Velocity using Seurat and scVelo https://scvelo.readthedocs.io</br>
 Velocity Estimating RNA Velocity using Seurat https://velocyto.org</br>
+Harmoney Single cell genomics datasets integration https://github.com/immunogenomics/harmony</br>
 
 
