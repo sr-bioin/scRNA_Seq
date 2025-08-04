@@ -4,12 +4,12 @@
 
 <h4>2). Seurat: R toolkit for single cell genomics. </h4> More information can be found here (https://satijalab.org/seurat)
 
-a) Single dataset scRNA-seq analysis
+Single dataset scRNA-seq analysis
 
-b) Multiple dataset scRNA-seq analysis</br>
-  Merge two data sets</br>
-    &nbsp; 1). Seurat integration</br>
-    &nbsp; 2). Harmony integration</br>
+Multiple dataset scRNA-seq analysis</br>
+   &nbsp; Merge two data sets</br>
+      &nbsp; 1). Seurat integration</br>
+      &nbsp; 2). Harmony integration</br>
 c) Data annotation with reference data</br>
     1a). Transcriptome similarity on cell cluster level</br>
     1b). Transcriptome similarity on cell level</br>
