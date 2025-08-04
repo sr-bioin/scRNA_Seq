@@ -8,7 +8,7 @@
 ### Single dataset scRNA-seq analysis
 
 
-#### Multiple dataset scRNA-seq analysis
+### Multiple dataset scRNA-seq analysis
 
 
    &ensp; 1). Merge two data sets</br>
