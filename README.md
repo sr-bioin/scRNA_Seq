@@ -14,6 +14,7 @@
    &ensp; 1). Merge two data sets</br>
       &emsp; 1). Seurat integration</br>
       &emsp; 2). Harmony integration</br>
+      
    &ensp; 2).Data annotation with reference data</br>
           &emsp; 1a). Transcriptome similarity on cell cluster level</br>
           &emsp; 1b). Transcriptome similarity on cell level</br>
