@@ -73,5 +73,5 @@ It involves combining the gene expression data of two or more single-separate ex
 
 ##### a). Seurat integration
 
-Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space.  
-**Seurat v5** is now properly aligned under the "Seurat integration" heading.
+    Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space.  
+    **Seurat v5** is now properly aligned under the "Seurat integration" heading.
