@@ -28,7 +28,7 @@
    &ensp;  3). RNA velocity analysis</br>
     <img width="600" height="500" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" /></br>
     &ensp; 4). Trajectory analysis with CellRank</br>
-    <img width="3968" height="3006" alt="terminal_states_highres" src="https://github.com/user-attachments/assets/821494ac-122d-446b-b6b4-63d4ddfc0712" /></br>
+    <img width="600" height="500" alt="terminal_states_highres" src="https://github.com/user-attachments/assets/821494ac-122d-446b-b6b4-63d4ddfc0712" /></br>
 
    &ensp;  5). Cell communication analysis</br>
 
