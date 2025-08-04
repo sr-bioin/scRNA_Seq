@@ -20,7 +20,7 @@
    &ensp; 2).Data annotation with reference data</br>
           &emsp; 1a). Transcriptome similarity on cell cluster level</br>
           &emsp; 1b). Transcriptome similarity on cell level</br>
-      <img width="700" height="400" alt="Transcriptome similarity on cell level2" src="https://github.com/user-attachments/assets/75e2b7bc-1a68-477d-bcf5-5dfe845a7bd0" />
+      <img width="700" height="600" alt="Transcriptome similarity on cell level2" src="https://github.com/user-attachments/assets/75e2b7bc-1a68-477d-bcf5-5dfe845a7bd0" />
 </br>
           &emsp; 2). Seurat-based label transfer</br>
       <img width="700" height="400" alt="Seurat" src="https://github.com/user-attachments/assets/0d5dcd00-8bdc-4dbb-a6bd-18a3f36136da">
