@@ -16,7 +16,7 @@
           &emsp; 1a). Transcriptome similarity on cell cluster level</br>
           &emsp; 1b). Transcriptome similarity on cell level</br>
       <img width="600" height="600" alt="umap_transfer_anchor" src="https://github.com/user-attachments/assets/b7eb68f3-f09e-48a8-bab0-6ee8546f24ca" /></br>
-    2. Seurat-based label transfer</br>
+          &emsp; 2. Seurat-based label transfer</br>
 d) Advanced analysis for scRNA-seq data</br>
     1). Cluster connectivity analysis with PAGA</br>
     2). Pseudotime reconstruction without subseting into an unbranched trajectory</br>
