@@ -20,6 +20,7 @@ d) Advanced analysis for scRNA-seq data
     2). Pseudotime reconstruction without subseting into an unbranched trajectory
     3). RNA velocity analysis
     <img width="600" height="500" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" />
+    
     4). Trajectory analysis with CellRank
     5). Cell communication analysis
 
