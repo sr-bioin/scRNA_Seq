@@ -14,7 +14,7 @@
    &ensp; 1). Merge two data sets</br>
       &emsp; 1). Seurat integration</br>
       &emsp; 2). Harmony integration</br>
-      <img width="600" height="400" alt="harmony" src="https://github.com/user-attachments/assets/2f169423-b5a9-4ac1-b07f-65987cb170cd" />
+      <img width="600" height="300" alt="harmony" src="https://github.com/user-attachments/assets/2f169423-b5a9-4ac1-b07f-65987cb170cd" />
 
       
    &ensp; 2).Data annotation with reference data</br>
