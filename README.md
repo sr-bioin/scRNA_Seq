@@ -9,6 +9,8 @@
 
 
 <h4>Multiple dataset scRNA-seq analysis</h4>
+
+
    &ensp; 1). Merge two data sets</br>
       &emsp; 1). Seurat integration</br>
       &emsp; 2). Harmony integration</br>
@@ -17,6 +19,8 @@
           &emsp; 1b). Transcriptome similarity on cell level</br>
       <img width="600" height="600" alt="umap_transfer_anchor" src="https://github.com/user-attachments/assets/b7eb68f3-f09e-48a8-bab0-6ee8546f24ca" /></br>
           &emsp; 2). Seurat-based label transfer</br>
+
+
 3) Advanced analysis for scRNA-seq data</br>
     &ensp; 1). Cluster connectivity analysis with PAGA</br>
     &ensp; 2). Pseudotime reconstruction without subseting into an unbranched trajectory</br>
