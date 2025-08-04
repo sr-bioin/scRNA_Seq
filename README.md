@@ -4,7 +4,26 @@
 
 <h4>2). Seurat: R toolkit for single cell genomics. </h4> More information can be found here (https://satijalab.org/seurat)
 
+a) Single dataset scRNA-seq analysis
 
+b) Multiple dataset scRNA-seq analysis
+  Merge two data sets
+    1). Seurat integration
+    2). Harmony integration
+c) Data annotation with reference data
+    1a). Transcriptome similarity on cell cluster level
+    1b). Transcriptome similarity on cell level
+      <img width="600" height="600" alt="umap_transfer_anchor" src="https://github.com/user-attachments/assets/b7eb68f3-f09e-48a8-bab0-6ee8546f24ca" />
+    2. Seurat-based label transfer
+d) Advanced analysis for scRNA-seq data
+    1). Cluster connectivity analysis with PAGA
+    2). Pseudotime reconstruction without subseting into an unbranched trajectory
+    3). RNA velocity analysis
+    <img width="1946" height="1601" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" />
+    4). Trajectory analysis with CellRank
+    5). Cell communication analysis
+
+   
 <h3>Resources</h3>
 Seurat https://github.com/satijalab/seurat</br>
 SeuratData https://github.com/satijalab/seurat-data</br>
