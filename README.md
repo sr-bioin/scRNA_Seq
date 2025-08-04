@@ -19,7 +19,7 @@
       <img width="700" height="400" alt="harmony" src="https://github.com/user-attachments/assets/2f169423-b5a9-4ac1-b07f-65987cb170cd" />
 
       
-   &ensp; 2).Annotation with reference data</br>
+    <h3>&ensp; 2).Annotation with reference data </h3></br>
 
 The transfer of cell type labels from pre-annotated (reference) to newly collected data is an important task in single-cell data analysis. As the number of    publicly available annotated datasets which can be used as reference, as well as the number of computational methods for cell type label transfer are    constantly growing, rationals to understand and decide which reference design and which method to use for a particular query dataset are needed.    
           <br>&emsp; 1a). Transcriptome similarity on cell cluster level</br>
