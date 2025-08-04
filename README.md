@@ -48,11 +48,11 @@ Seurat https://github.com/satijalab/seurat</br>
 SeuratData https://github.com/satijalab/seurat-data</br>
 scVelo Estimating RNA Velocity using Seurat and scVelo https://scvelo.readthedocs.io</br>
 Velocity Estimating RNA Velocity using Seurat https://velocyto.org</br>
-Harmoney Single cell genomics datasets integration https://github.com/immunogenomics/harmony</br>
+Harmoney Single cell genomics datasets integration https://github.com/immunogenomics/harmony</br>\
 
-Hello\
+1. Hello\
     This sentence is indented to match the heading.
 
-Heading\
+2. Heading\
     This sentence is indented to match the heading.
     This sentence is indented to match the heading.
