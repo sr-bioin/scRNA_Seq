@@ -17,13 +17,13 @@
           &emsp; 1b). Transcriptome similarity on cell level</br>
       <img width="600" height="600" alt="umap_transfer_anchor" src="https://github.com/user-attachments/assets/b7eb68f3-f09e-48a8-bab0-6ee8546f24ca" /></br>
           &emsp; 2). Seurat-based label transfer</br>
-d) Advanced analysis for scRNA-seq data</br>
-    1). Cluster connectivity analysis with PAGA</br>
-    2). Pseudotime reconstruction without subseting into an unbranched trajectory</br>
-    3). RNA velocity analysis</br>
+3) Advanced analysis for scRNA-seq data</br>
+    &ensp; 1). Cluster connectivity analysis with PAGA</br>
+    &ensp; 2). Pseudotime reconstruction without subseting into an unbranched trajectory</br>
+   &ensp;  3). RNA velocity analysis</br>
     <img width="600" height="500" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" /></br>
-    4). Trajectory analysis with CellRank</br>
-    5). Cell communication analysis</br>
+    &ensp; 4). Trajectory analysis with CellRank</br>
+   &ensp;  5). Cell communication analysis</br>
 
    
 <h3>Resources</h3>
