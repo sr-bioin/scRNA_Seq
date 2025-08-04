@@ -22,6 +22,8 @@
           &emsp; 1b). Transcriptome similarity on cell level</br>
       <img width="600" height="600" alt="umap_transfer_anchor" src="https://github.com/user-attachments/assets/b7eb68f3-f09e-48a8-bab0-6ee8546f24ca" /></br>
           &emsp; 2). Seurat-based label transfer</br>
+![Seurat-based_label_transfer](https://github.com/user-attachments/assets/bcfe19b4-c05e-49e3-8e1f-0ecd09f97ed8)
+
 
 
 3) Advanced analysis for scRNA-seq data</br>
