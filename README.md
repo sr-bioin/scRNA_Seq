@@ -17,7 +17,7 @@
       Seurat v5 offers a streamlined approach to data integration, primarily through the IntegrateLayers function, which performs integration in a low-dimensional space.Before integration, the data first has to be split into individual samples (i.e. a separate count matrix for each sample). Next each sample is normalized using SCTransform, and then PCA is performed to reduce the dimensionality of the expression data.
       <img width="700" height="400" alt="Surat_mapped" src="https://github.com/user-attachments/assets/41d005a3-be37-43e1-a33a-cec61bb2b6de" /></br>
      <br> &emsp; 2). Harmony integration</br>
-      <img width="600" height="300" alt="harmony" src="https://github.com/user-attachments/assets/2f169423-b5a9-4ac1-b07f-65987cb170cd" />
+      <img width="700" height="400" alt="harmony" src="https://github.com/user-attachments/assets/2f169423-b5a9-4ac1-b07f-65987cb170cd" />
 
       
    &ensp; 2).Data annotation with reference data</br>
