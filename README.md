@@ -12,7 +12,8 @@
 
 
    &ensp; 1). Merge two data sets</br>
-      &emsp; 1). Seurat integration</br>
+   It involves combining the gene expression data of two or more single-cell RNA sequencing (scRNA-seq) datasetsand associated metadata from separate experiments into a unified dataset for downstream analysis. This process is often a prerequisite for data integration, which aims to correct for technical variations and enable the comparison of biological features across datasets.
+      <br>&emsp; 1). Seurat integration</br>
       &emsp; 2). Harmony integration</br>
       <img width="600" height="300" alt="harmony" src="https://github.com/user-attachments/assets/2f169423-b5a9-4ac1-b07f-65987cb170cd" />
 
