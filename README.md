@@ -7,9 +7,9 @@
 Single dataset scRNA-seq analysis
 
 Multiple dataset scRNA-seq analysis</br>
-   &nbsp; Merge two data sets</br>
-      &emsp;1). Seurat integration</br>
-      &emsp;2). Harmony integration</br>
+   &ensp; Merge two data sets</br>
+      &emsp; 1). Seurat integration</br>
+      &emsp; 2). Harmony integration</br>
 c) Data annotation with reference data</br>
     1a). Transcriptome similarity on cell cluster level</br>
     1b). Transcriptome similarity on cell level</br>
