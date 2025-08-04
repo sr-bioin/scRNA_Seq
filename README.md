@@ -28,7 +28,7 @@
    &ensp;  3). RNA velocity analysis</br>
     <img width="600" height="500" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" /></br>
     &ensp; 4). Trajectory analysis with CellRank</br>
-     <br />Trajectory analysis with CellRank in single-cell transcriptomics is a powerful method for studying cell fate decisions and cellular dynamics. It <br />combines single-cell gene expression data with RNA velocity information to reconstruct directed cell state trajectories, revealing how cells transition <br />between different states and ultimately differentiate or reprogram."
+        Trajectory analysis with CellRank in single-cell transcriptomics is a powerful method for studying cell fate decisions and cellular dynamics. It                combines single-cell gene expression data with RNA velocity information to reconstruct directed cell state trajectories, revealing how cells transition          between different states and ultimately differentiate or reprogram."
     <img width="600" height="550" alt="terminal_states_highres" src="https://github.com/user-attachments/assets/821494ac-122d-446b-b6b4-63d4ddfc0712" /></br>
 
    &ensp;  5). Cell communication analysis</br>
