@@ -8,7 +8,7 @@
 <h4>Single dataset scRNA-seq analysis</h4>
 
 
-<h4>Multiple dataset scRNA-seq analysis</h4></br>
+<h4>Multiple dataset scRNA-seq analysis</h4>
    &ensp; Merge two data sets</br>
       &emsp; 1). Seurat integration</br>
       &emsp; 2). Harmony integration</br>
