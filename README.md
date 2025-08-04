@@ -58,3 +58,24 @@ Harmoney Single cell genomics datasets integration https://github.com/immunogeno
 2. Heading\
     This sentence is indented to match the heading.
     This sentence is indented to match the heading.
+
+
+
+
+
+# Header1
+## Header 2
+### Multiple dataset scRNA-seq analysis
+
+#### 1). Merge two data sets
+
+It involves combining the gene expression data of two or more single-separate experiments into a unified dataset for downstream analysis.  
+
+- Correct for technical variations and enable the comparison of biological conditions  
+- Tools: Seurat, Harmony, LIGER, MNN, CSS, etc.  
+- Seurat and Harmony integration approaches  
+
+##### 1). Seurat integration
+
+Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space.  
+**Seurat v5** is now properly aligned under the "Seurat integration" heading.
