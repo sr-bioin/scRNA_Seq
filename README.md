@@ -5,7 +5,18 @@
 
 ## Seurat pipeline</h3>
 ### <ins>Single dataset scRNA-seq analysis</ins>
- 
+1. Data Loading & Preprocessing
+&emsp;a) Create a Seurat object
+&emsp;b).Quality control
+2. Normalization
+3. Feature selection
+4. Data Scaling & Regressing Out Confounders
+5. Dimensionality reduction using principal component analysis (PCA)
+6. Non-linear dimension reduction (UMAP/t-SNE)
+7. Cluster the cells
+8. Annotate cell clusters
+9. Pseudotemporal cell ordering
+
 
 ### <ins>Multiple dataset scRNA-seq analysis</ins>
 <h3>1). Merge two data sets</h3>
