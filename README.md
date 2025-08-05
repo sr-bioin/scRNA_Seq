@@ -21,11 +21,11 @@ Seurat v5 offers a streamlined approach to data integration, primarily through t
 Harmony, an algorithm for robust, scalable, and flexible multi-dataset integration to meet four key challenges of unsupervised scRNAseq joint embedding: scaling to large datasets, identification of both broad populations and fine-grained subpopulations, flexibility to accommodate complex experimental design, and the power to integrate across modalities. </br>
       <img width="700" height="400" alt="harmony" src="https://github.com/user-attachments/assets/2f169423-b5a9-4ac1-b07f-65987cb170cd" />
 #### 2). Annotate query datasets using reference data
-The transfer of cell type labels from pre-annotated (reference) to newly collected data is an important task in single-cell data analysis. As the number of    publicly available annotated datasets which can be used as reference, as well as the number of computational methods for cell type label transfer are    constantly growing, rationals to understand and decide which reference design and which method to use for a particular query dataset are needed.    
-          <br>&emsp; _1a). Transcriptome similarity on cell cluster level_</br>
+The transfer of cell type labels from pre-annotated (reference) to newly collected data is an important task in single-cell data analysis. As the number of    publicly available annotated datasets which can be used as reference, as well as the number of computational methods for cell type label transfer are    constantly growing, rationals to understand and decide which reference design and which method to use for a particular query dataset are needed. <br>   
+          &emsp; _1a). Transcriptome similarity on cell cluster level_</br>
           &emsp; _b). Transcriptome similarity on cell level_</br>
       <img width="700" height="600" alt="Transcriptome similarity on cell level2" src="https://github.com/user-attachments/assets/75e2b7bc-1a68-477d-bcf5-5dfe845a7bd0" /></br>
-          &emsp; 2). Seurat-based label transfer</br>
+          &emsp; _2). Seurat-based label transfer_</br>
       <img width="700" height="400" alt="Seurat" src="https://github.com/user-attachments/assets/0d5dcd00-8bdc-4dbb-a6bd-18a3f36136da">
 
  
