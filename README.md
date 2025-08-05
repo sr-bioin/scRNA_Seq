@@ -67,5 +67,8 @@ Correct for technical variations and enable the comparison of biological conditi
 
 **a). Seurat integration**
 
-Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space. Seurat v5 is now properly aligned under the "Seurat integration" heading.
+Seurat v5 offers a streamlined approach to data integration, primarily through the IntegrateLayers function, which performs integration 
+    in a low-dimensional space.Before integration, the data first has to be split into individual samples (i.e. a separate count matrix for 
+    each sample). Next each sample is normalized using SCTransform, and then PCA is performed to reduce the dimensionality of the 
+    expression data
 
