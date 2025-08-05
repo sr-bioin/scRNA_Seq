@@ -21,7 +21,7 @@ Seurat v5 offers a streamlined approach to data integration, primarily through t
 #### _ii). Harmony integration_
 Harmony, an algorithm for robust, scalable, and flexible multi-dataset integration to meet four key challenges of unsupervised scRNAseq joint embedding: scaling to large datasets, identification of both broad populations and fine-grained subpopulations, flexibility to accommodate complex experimental design, and the power to integrate across modalities. </br>
       <img width="700" height="400" alt="harmony" src="https://github.com/user-attachments/assets/2f169423-b5a9-4ac1-b07f-65987cb170cd" />
-    <h3><br>2). Annotate query datasets using reference data </h3>
+#### 2). Annotate query datasets using reference data
 The transfer of cell type labels from pre-annotated (reference) to newly collected data is an important task in single-cell data analysis. As the number of    publicly available annotated datasets which can be used as reference, as well as the number of computational methods for cell type label transfer are    constantly growing, rationals to understand and decide which reference design and which method to use for a particular query dataset are needed.    
           <br>&emsp; 1a). Transcriptome similarity on cell cluster level</br>
           &emsp; 1b). Transcriptome similarity on cell level</br>
