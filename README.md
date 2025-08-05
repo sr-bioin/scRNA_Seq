@@ -29,7 +29,7 @@ Seurat v5 offers a streamlined approach to data integration, primarily through t
     expression data.<br>
       <img width="700" height="400" alt="Surat_mapped" src="https://github.com/user-attachments/assets/41d005a3-be37-43e1-a33a-cec61bb2b6de" /></br>
 #### ii). _Harmony integration_
-Harmony, an algorithm for robust, scalable, and flexible multi-dataset integration to meet four key challenges of unsupervised scRNAseq joint embedding: scaling to large datasets, identification of both broad populations and fine-grained subpopulations, flexibility to accommodate complex experimental design, and the power to integrate across modalities. </br>
+It is an algorithm for robust, scalable, and flexible multi-dataset integration to meet four key challenges of unsupervised scRNAseq joint embedding: scaling to large datasets, identification of both broad populations and fine-grained subpopulations, flexibility to accommodate complex experimental design, and the power to integrate across modalities. </br>
       <img width="700" height="400" alt="harmony" src="https://github.com/user-attachments/assets/2f169423-b5a9-4ac1-b07f-65987cb170cd" />
 <h3> 2). Annotate query datasets using reference data</h3>
 The transfer of cell type labels from pre-annotated (reference) to newly collected data is an important task in single-cell data analysis. As the number of    publicly available annotated datasets which can be used as reference, as well as the number of computational methods for cell type label transfer are    constantly growing, rationals to understand and decide which reference design and which method to use for a particular query dataset are needed. <br>   
