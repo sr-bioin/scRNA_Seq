@@ -5,9 +5,9 @@
 
 ## Seurat pipeline</h3>
 ### <ins>Single dataset scRNA-seq analysis</ins>
-1. Data Loading & Preprocessing
-&emsp;a) Create a Seurat object
-&emsp;b).Quality control
+1. Data Loading & Preprocessing</br>
+&emsp;a) Create a Seurat object</br>
+&emsp;b).Quality control</br>
 2. Normalization
 3. Feature selection
 4. Data Scaling & Regressing Out Confounders
