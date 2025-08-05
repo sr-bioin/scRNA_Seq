@@ -11,8 +11,8 @@
 #### 1). Merge two data sets
 It involves combining the gene expression data of two or more single-cell RNA sequencing (scRNA-seq) datasetsand associated metadata from separate experiments into a unified dataset for downstream analysis. This process is often a prerequisite for data integration, which aims to correct for technical variations and enable the comparison of biological features across datasets. There are different ways to integrate datasets, eg. Seurat, Harmony, Liger, MNN,CSS etc.Seurat and Harmony integration are described below.<br>
    
-#### _i) Seurat integration_
-Seurat v5 offers a streamlined approach to data integration, primarily through the IntegrateLayers function, which performs integration 
+&ensp; #### _i) Seurat integration_
+&ensp; Seurat v5 offers a streamlined approach to data integration, primarily through the IntegrateLayers function, which performs integration 
     in a low-dimensional space.Before integration, the data first has to be split into individual samples (i.e. a separate count matrix for 
     each sample). Next each sample is normalized using SCTransform, and then PCA is performed to reduce the dimensionality of the 
     expression data.<br>
@@ -32,7 +32,7 @@ The transfer of cell type labels from pre-annotated (reference) to newly collect
 &ensp; 2). Pseudotime reconstruction without subseting into an unbranched trajectory</br>
 &ensp; 3). RNA velocity analysis</br>
     <img width="600" height="500" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" /></br>
-&ensp; 4). Trajectory analysis with CellRank
+&ensp; 4). Trajectory analysis with CellRank</br>
 Trajectory analysis with CellRank in single-cell transcriptomics is a powerful method for studying cell fate decisions and cellular dynamics. It combines single-cell gene expression data with RNA velocity information to reconstruct directed cell state trajectories, revealing how cells transition between different states and ultimately differentiate or reprogram.
     <img width="600" height="550" alt="terminal_states_highres" src="https://github.com/user-attachments/assets/821494ac-122d-446b-b6b4-63d4ddfc0712" /></br>
 
