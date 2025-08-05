@@ -62,13 +62,20 @@ Harmoney Single cell genomics datasets integration https://github.com/immunogeno
 
 
 
+1. Hello  
+   This sentence is indented to match the heading.
 
-#### 1). Merge two data sets
+2. Heading  
+   This sentence is indented to match the heading. This sentence is indented to match the heading.
 
-It involves combining the gene expression data of two or more single-separate experiments into a unified dataset. Correct for technical variations and enable the comparison of biological conditions. Seurat, Harmony, LIGER, MNN, CSS approaches.
+✅ 1). Merge two data sets  
 
-<div style="margin-left: 20px;">
-<strong>a). Seurat integration</strong><br>
-Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space. This includes handling technical variations between different experimental conditions or sequencing runs.<br>
-<strong>Seurat v5</strong> provides improved methods for integrating large-scale datasets while preserving biological variation.
+It involves combining the gene expression data of two or more single-separate experiments into a unified dataset. Covariations and enable the comparison of biological conditions. Seurat, Harmony, LIGER, MNN, CSS approaches.
+
+<div style="margin-left: 40px;">
+
+a). <strong>Seurat integration</strong><br>
+Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space. This includes handling between different experimental conditions or sequencing runs.<br>
+Seurat v5 provides improved methods for integrating large-scale datasets while preserving biological variation.
+
 </div>
