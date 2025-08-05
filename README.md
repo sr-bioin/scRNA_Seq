@@ -43,7 +43,9 @@ The transfer of cell type labels from pre-annotated (reference) to newly collect
 
 <h3> 3) Advanced analysis for scRNA-seq data</h3>
 
-#### i). _Cluster connectivity analysis with PAGA_</br>
+#### i). _Cluster connectivity analysis with PAGA_
+Partition-based graph abstraction (PAGA) provides an interpretable graph-like map of the arising data manifold, based on estimating connectivity of manifold partitions (https://github.com/theislab/paga). PAGA maps preserve the global topology of data, allow analyzing data at different resolutions, and result in much higher computational efficiency of the typical exploratory data analysis workflow. 
+
 #### ii). _Pseudotime reconstruction without subseting into an unbranched trajectory_</br>
 #### iii). _RNA velocity analysis_
 <img width="600" height="500" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" /></br>
