@@ -58,6 +58,3 @@ Harmoney Single cell genomics datasets integration https://github.com/immunogeno
 
 
 
-<pre style="display:inline;margin:0;padding:0;background:none;border:none;font-family:inherit;">
-a). <strong>Seurat integration</strong> Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space, this includes handling between experimental conditions or sequencing runs.
-</pre>
