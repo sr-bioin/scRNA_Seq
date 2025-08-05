@@ -75,5 +75,4 @@ Harmoney Single cell genomics datasets integration https://github.com/immunogeno
 It involves combining the gene expression data of two or more single-separate experiments into a unified dataset. C is biological conditions. Seurat, Harmony, LIGER, MNN, CSS approaches.
 
 &nbsp;&nbsp;&nbsp;a). **Seurat integration**  
-&nbsp;&nbsp;&nbsp;Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space.  
-&nbsp;&nbsp;&nbsp;This includes handling between experimental conditions or sequencing runs.
+&nbsp;&nbsp;&nbsp;Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space, this includes handling between experimental conditions or sequencing runs.
