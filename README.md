@@ -25,6 +25,7 @@ The transfer of cell type labels from pre-annotated (reference) to newly collect
 
 #### 1a). _Transcriptome similarity on cell cluster level_</br>
 ####   b). _Transcriptome similarity on cell level_</br>
+
       <img width="700" height="600" alt="Transcriptome similarity on cell level2" src="https://github.com/user-attachments/assets/75e2b7bc-1a68-477d-bcf5-5dfe845a7bd0" /></br>
 &emsp; _2). Seurat-based label transfer_</br>
       <img width="700" height="400" alt="Seurat" src="https://github.com/user-attachments/assets/0d5dcd00-8bdc-4dbb-a6bd-18a3f36136da">
