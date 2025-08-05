@@ -7,7 +7,7 @@
 ### <ins>Single dataset scRNA-seq analysis</ins>
  
 
-### Multiple dataset scRNA-seq analysis
+### <ins>Multiple dataset scRNA-seq analysis</ins>
 <h3>1). Merge two data sets</h3>
 It involves combining the gene expression data of two or more single-cell RNA sequencing (scRNA-seq) datasetsand associated metadata from separate experiments into a unified dataset for downstream analysis. This process is often a prerequisite for data integration, which aims to correct for technical variations and enable the comparison of biological features across datasets. There are different ways to integrate datasets, eg. Seurat, Harmony, Liger, MNN,CSS etc.Seurat and Harmony integration are described below.<br>
    
