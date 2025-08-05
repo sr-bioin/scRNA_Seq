@@ -28,8 +28,7 @@ The transfer of cell type labels from pre-annotated (reference) to newly collect
           &emsp; _2). Seurat-based label transfer_</br>
       <img width="700" height="400" alt="Seurat" src="https://github.com/user-attachments/assets/0d5dcd00-8bdc-4dbb-a6bd-18a3f36136da">
 #### 3) Advanced analysis for scRNA-seq data
-
-    </br>&ensp; 1). Cluster connectivity analysis with PAGA</br>
+&ensp; 1). Cluster connectivity analysis with PAGA</br>
     &ensp; 2). Pseudotime reconstruction without subseting into an unbranched trajectory</br>
    &ensp;  3). RNA velocity analysis</br>
     <img width="600" height="500" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" /></br>
