@@ -71,8 +71,9 @@ Seurat v5 offers a streamlined approach to data integration, primarily through t
     in a low-dimensional space.Before integration, the data first has to be split into individual samples (i.e. a separate count matrix for 
     each sample). Next each sample is normalized using SCTransform, and then PCA is performed to reduce the dimensionality of the 
     expression data
-<div style="margin-left: 2em;">
 
+
+<div style="margin-left: 4em;">
 <strong>a). Seurat integration</strong><br>
 Seurat v5 offers a streamlined approach to data integration...
 
