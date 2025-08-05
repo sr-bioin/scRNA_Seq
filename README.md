@@ -72,8 +72,8 @@ Harmoney Single cell genomics datasets integration https://github.com/immunogeno
 
 #### 1). Merge two data sets
 
-It involves combining the gene expression data of two or more single-separate experiments into a unified dataset for downstream analysis. Correct for technical variations and enable the comparison of biological conditions. Seurat, Harmony, LIGER, MNN, CSS, Harmony integration approaches
+It involves combining the gene expression data of two or more single-separate experiments into a unified dataset for downstream analysis. Correct for technical variations and enable the comparison of biological conditions. Seurat, Harmony, LIGER, MNN, CSS, Harmony integration approaches.
 
-&nbsp;&nbsp;&nbsp;&nbsp;a). **Seurat integration**  
-&nbsp;&nbsp;&nbsp;&nbsp;Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space. Expression data of two or more single-separate experiments into a unified dataset for downstream analysis.
-&nbsp;&nbsp;&nbsp;&nbsp;**Seurat v5** is now properly aligned under the "Seurat integration" heading.
+→ a). **Seurat integration**  
+→ Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space. This includes handling of batch effects and other technical variations between different experimental conditions or sequencing runs.  
+→ **Seurat v5** provides improved methods for integrating large-scale datasets while preserving biological variation.
