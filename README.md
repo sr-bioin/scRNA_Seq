@@ -47,34 +47,3 @@ scVelo Estimating RNA Velocity using Seurat and scVelo https://scvelo.readthedoc
 Velocity Estimating RNA Velocity using Seurat https://velocyto.org</br>
 Harmoney Single cell genomics datasets integration https://github.com/immunogenomics/harmony</br>\
 
-# Header1
-## Header2
-### Header3
-   #### My Indented Subheading
-         This is the first sentence of my indented paragraph, this sentence continues the indented paragraph. RNA velocity information to reconstruct directed cell            state trajectories, revealing how cells transition between different states and ultimately differentiate or reprogram.
-
-
-# Header1
-
-## Header 2
-
-### Multiple dataset scRNA-seq analysis
-
-**1). Merge two data sets**
-
-It involves combining the gene expression data of two or more single-separate experiments into a unified dataset.  
-Correct for technical variations and enable the comparison of biological conditions. Seurat, Harmony, LIGER, and Harmony integration approaches.
-
-**a). Seurat integration**
-
-Seurat v5 offers a streamlined approach to data integration, primarily through the IntegrateLayers function, which performs integration 
-    in a low-dimensional space.Before integration, the data first has to be split into individual samples (i.e. a separate count matrix for 
-    each sample). Next each sample is normalized using SCTransform, and then PCA is performed to reduce the dimensionality of the 
-    expression data
-
-
-<div style="margin-left: 4em;">
-<strong>a). Seurat integration</strong><br>
-Seurat v5 offers a streamlined approach to data integration...
-
-</div>
