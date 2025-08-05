@@ -23,8 +23,8 @@ Harmony, an algorithm for robust, scalable, and flexible multi-dataset integrati
 <h3> 2). Annotate query datasets using reference data</h3>
 The transfer of cell type labels from pre-annotated (reference) to newly collected data is an important task in single-cell data analysis. As the number of    publicly available annotated datasets which can be used as reference, as well as the number of computational methods for cell type label transfer are    constantly growing, rationals to understand and decide which reference design and which method to use for a particular query dataset are needed. <br>   
 
-#### 1a). _Transcriptome similarity on cell cluster level_
-####   b). _Transcriptome similarity on cell level_
+#### i). _Transcriptome similarity on cell cluster level_
+#### ii). _Transcriptome similarity on cell level_
 
 <img width="700" height="600" alt="Transcriptome similarity on cell level2" src="https://github.com/user-attachments/assets/75e2b7bc-1a68-477d-bcf5-5dfe845a7bd0" /></br>
 &emsp; _2). Seurat-based label transfer_</br>
@@ -32,15 +32,14 @@ The transfer of cell type labels from pre-annotated (reference) to newly collect
 
 <h3> 3) Advanced analysis for scRNA-seq data</h3>
 
-#### 1). _Cluster connectivity analysis with PAGA_</br>
-#### 2). _Pseudotime reconstruction without subseting into an unbranched trajectory_</br>
-#### 3). _RNA velocity analysis_
+#### i). _Cluster connectivity analysis with PAGA_</br>
+#### ii). _Pseudotime reconstruction without subseting into an unbranched trajectory_</br>
+#### iii). _RNA velocity analysis_
 <img width="600" height="500" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" /></br>
-#### 4). _Trajectory analysis with CellRank_
+#### iv). _Trajectory analysis with CellRank_
 Trajectory analysis with CellRank in single-cell transcriptomics is a powerful method for studying cell fate decisions and cellular dynamics. It combines single-cell gene expression data with RNA velocity information to reconstruct directed cell state trajectories, revealing how cells transition between different states and ultimately differentiate or reprogram.
 <img width="600" height="550" alt="terminal_states_highres" src="https://github.com/user-attachments/assets/821494ac-122d-446b-b6b4-63d4ddfc0712" /></br>
-
-&ensp; 5). Cell communication analysis</br>
+#### v). Cell communication analysis
 
    
 <h3>Resources</h3>
