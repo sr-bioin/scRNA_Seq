@@ -48,6 +48,8 @@ Partition-based graph abstraction (PAGA) provides an interpretable graph-like ma
 
 #### ii). _Pseudotime reconstruction without subseting into an unbranched trajectory_</br>
 #### iii). _RNA velocity analysis_
+RNA velocity is a high-dimensional vector that predicts the future state of individual cells on a timescale of hours. It is the time derivative of gene expression state (ds/dt with s representing the high-dimensional expression state and t time) and is widely used to infer temporal dynamics in single-cell gene expression data.
+
 <img width="600" height="500" alt="Velocity-Plot" src="https://github.com/user-attachments/assets/44d90282-b064-4ac8-9b33-83e2e664475a" /></br>
 #### iv). _Trajectory analysis with CellRank_
 Trajectory analysis with CellRank in single-cell transcriptomics is a powerful method for studying cell fate decisions and cellular dynamics. It combines single-cell gene expression data with RNA velocity information to reconstruct directed cell state trajectories, revealing how cells transition between different states and ultimately differentiate or reprogram.
