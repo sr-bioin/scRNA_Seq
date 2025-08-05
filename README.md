@@ -52,27 +52,12 @@ SeuratData https://github.com/satijalab/seurat-data</br>
 scVelo Estimating RNA Velocity using Seurat and scVelo https://scvelo.readthedocs.io</br>
 Velocity Estimating RNA Velocity using Seurat https://velocyto.org</br>
 Harmoney Single cell genomics datasets integration https://github.com/immunogenomics/harmony</br>\
-1. Hello  
-   This sentence is indented to match the heading.
 
-2. Heading  
-   This sentence is indented to match the heading. This sentence is indented to match the heading.
 
-3. Hello  
-   This sentence is indented to match the heading.
 
-4. Heading  
-   This sentence is indented to match the heading. This sentence is indented to match the heading.
 
-5. Hello  
-   This sentence is indented to match the heading.
 
-6. Heading  
-   This sentence is indented to match the heading. This sentence is indented to match the heading.
 
-✔ 1). Merge two data sets  
-
-It involves combining the gene expression data of two or more single-separate experiments into a unified dataset. C is biological conditions. Seurat, Harmony, LIGER, MNN, CSS approaches.
-
-&nbsp;&nbsp;&nbsp;a). **Seurat integration**  
-&nbsp;&nbsp;&nbsp;Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space, this includes handling between experimental conditions or sequencing runs.
+<pre style="display:inline;margin:0;padding:0;background:none;border:none;font-family:inherit;">
+a). <strong>Seurat integration</strong> Seurat v5 offers a streamlined approach to data integration, primarily in low-dimensional space, this includes handling between experimental conditions or sequencing runs.
+</pre>
