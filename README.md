@@ -54,7 +54,7 @@ RNA velocity is a high-dimensional vector that predicts the future state of indi
 #### iv). _Trajectory analysis with CellRank_
 Trajectory analysis with CellRank in single-cell transcriptomics is a powerful method for studying cell fate decisions and cellular dynamics. It combines single-cell gene expression data with RNA velocity information to reconstruct directed cell state trajectories, revealing how cells transition between different states and ultimately differentiate or reprogram.
 <img width="600" height="550" alt="terminal_states_highres" src="https://github.com/user-attachments/assets/821494ac-122d-446b-b6b4-63d4ddfc0712" /></br>
-#### v). Cell communication analysis
+#### v). _Cell communication analysis_
 
    
 <h3>Resources</h3>
