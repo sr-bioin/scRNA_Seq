@@ -57,7 +57,10 @@ Trajectory analysis with CellRank in single-cell transcriptomics is a powerful m
 <img width="600" height="550" alt="terminal_states_highres" src="https://github.com/user-attachments/assets/821494ac-122d-446b-b6b4-63d4ddfc0712" /></br>
 #### v). _Cell communication analysis_
 
-   
+### <ins>Multiple dataset scRNA-seq analysis</ins> 
+<img width="600" height="333" alt="DS1DS2DS3_integrationN" src="https://github.com/user-attachments/assets/8ae5fda2-ca09-4a8d-acb5-7303bc83f8d2" />
+
+
 <h3>Resources</h3>
 Seurat https://github.com/satijalab/seurat</br>
 SeuratData https://github.com/satijalab/seurat-data</br>
