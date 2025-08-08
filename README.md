@@ -45,6 +45,7 @@ The transfer of cell type labels from pre-annotated (reference) to newly collect
 
 #### i). _Cluster connectivity analysis with PAGA_
 Partition-based graph abstraction (PAGA) provides an interpretable graph-like map of the arising data manifold, based on estimating connectivity of manifold partitions (https://github.com/theislab/paga). PAGA maps preserve the global topology of data, allow analyzing data at different resolutions, and result in much higher computational efficiency of the typical exploratory data analysis workflow. 
+<img width="600" height="600" alt="DS1_paga_SCT" src="https://github.com/user-attachments/assets/50485134-f44f-4fe2-831c-3bf843bcc5e8" />
 
 #### ii). _Pseudotime reconstruction without subseting into an unbranched trajectory_</br>
 #### iii). _RNA velocity analysis_
