@@ -24,8 +24,7 @@ It involves combining the gene expression data of two or more single-cell RNA se
    
 #### i) _Seurat integration_:
 Seurat v5 offers a streamlined approach to data integration, primarily through the IntegrateLayers function, which performs integration 
-    in a low-dimensional space.Before integration, the data first has to be split into individual samples (i.e. a separate count matrix for 
-    each sample). Next each sample is normalized using SCTransform, and then PCA is performed to reduce the dimensionality of the 
+    in a low-dimensional space.Before integration, the data first has to be split into individual samples (i.e. a separate count matrix for each sample). Next each sample is normalized using SCTransform, and then PCA is performed to reduce the dimensionality of the 
     expression data.<br>
       <img width="700" height="400" alt="Surat_mapped" src="https://github.com/user-attachments/assets/41d005a3-be37-43e1-a33a-cec61bb2b6de" /></br>
 #### ii). _Harmony integration_
@@ -39,7 +38,8 @@ The transfer of cell type labels from pre-annotated (reference) to newly collect
 
 <img width="700" height="600" alt="Transcriptome similarity on cell level2" src="https://github.com/user-attachments/assets/75e2b7bc-1a68-477d-bcf5-5dfe845a7bd0" /></br>
 &emsp; _2). Seurat-based label transfer_</br>
-<img width="700" height="400" alt="Seurat" src="https://github.com/user-attachments/assets/0d5dcd00-8bdc-4dbb-a6bd-18a3f36136da">
+<img width="600" height="900" alt="Seurat-based_label_transfer_SCT]" src="https://github.com/user-attachments/assets/a77c36c2-59bc-4b92-87dc-feb5e3354a9d"
+
 
 <h3> 3) Advanced analysis for scRNA-seq data</h3>
 
